@@ -1,4 +1,4 @@
-package company.service;
+package company.service.api;
 
 import company.User;
 

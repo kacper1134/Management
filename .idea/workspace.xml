@@ -2,17 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbaf7e9a-32d1-4519-8e37-c1d26bf1b450" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/company/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/company/service/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/service/UserServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/company/service/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/company/service/api/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/service/ProductServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/management.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/Boots.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Cloth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/Cloth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/company/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/service/api/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/company/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/service/UserServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,48 +23,34 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/company/service/UserServiceImpl.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/company/service/api/ProductService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+            <state relative-caret-position="187">
+              <caret line="11" column="53" lean-forward="true" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#removeUserById#0;class#UserServiceImpl#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/service/UserServiceTest.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/service/ProductServiceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+            <state relative-caret-position="300">
+              <caret line="40" column="78" lean-forward="true" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#testGetAllUsers#0;class#UserServiceTest#0" />
-                <element signature="method#testAddUser#0;class#UserServiceTest#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/company/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#getAllProductsPositiveTest#0;class#ProductServiceTest#0" />
+                <element signature="method#getCountProductsPositiveTest#0;class#ProductServiceTest#0" />
+                <element signature="method#getCountProductsNegativeTest#0;class#ProductServiceTest#0" />
+                <element signature="method#getProductByProductNameWhenProductExist#0;class#ProductServiceTest#0" />
+                <element signature="method#getProductByProductNameWhenProductNoExist#0;class#ProductServiceTest#0" />
+                <element signature="method#testisProductOnWarehouseWhenIs#0;class#ProductServiceTest#0" />
+                <element signature="method#testIsProductOnWarehouseWhenIsNot#0;class#ProductServiceTest#0" />
+                <element signature="method#testisProductExistByNameWhenProductNoExist#0;class#ProductServiceTest#0" />
+                <element signature="method#testisProductExistByIdWhenProductExist#0;class#ProductServiceTest#0" />
+                <element signature="method#testisProductExistByIdWhenProductNoExist#0;class#ProductServiceTest#0" />
               </folding>
             </state>
           </provider>
@@ -80,6 +61,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -107,6 +89,10 @@
         <option value="$PROJECT_DIR$/src/main/java/company/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/service/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/service/UserServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/service/api/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/service/ProductServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/test/java/service/ProductServiceTest.java" />
       </list>
     </option>
   </component>
@@ -118,7 +104,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-3" />
+    <option name="x" value="-12" />
+    <option name="y" value="8" />
     <option name="width" value="1015" />
     <option name="height" value="1040" />
   </component>
@@ -304,13 +291,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="62" column="29" lean-forward="true" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/company/Cloth.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -336,19 +316,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/service/UserService.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/company/service/UserServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="245">
           <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -357,10 +334,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/service/api/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        <state relative-caret-position="102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -372,6 +352,57 @@
             <element signature="imports" expanded="true" />
             <element signature="method#testGetAllUsers#0;class#UserServiceTest#0" />
             <element signature="method#testAddUser#0;class#UserServiceTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="62" column="28" lean-forward="true" selection-start-line="62" selection-start-column="28" selection-end-line="62" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/service/api/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="53" lean-forward="true" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/service/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="25" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getProductByProductName#0;class#ProductServiceImpl#0" />
+            <element signature="method#isProductOnWarehouse#0;class#ProductServiceImpl#0" />
+            <element signature="method#isProductExist#0;class#ProductServiceImpl#0" />
+            <element signature="method#isProductExist#1;class#ProductServiceImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/service/ProductServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="40" column="78" lean-forward="true" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getAllProductsPositiveTest#0;class#ProductServiceTest#0" />
+            <element signature="method#getCountProductsPositiveTest#0;class#ProductServiceTest#0" />
+            <element signature="method#getCountProductsNegativeTest#0;class#ProductServiceTest#0" />
+            <element signature="method#getProductByProductNameWhenProductExist#0;class#ProductServiceTest#0" />
+            <element signature="method#getProductByProductNameWhenProductNoExist#0;class#ProductServiceTest#0" />
+            <element signature="method#testisProductOnWarehouseWhenIs#0;class#ProductServiceTest#0" />
+            <element signature="method#testIsProductOnWarehouseWhenIsNot#0;class#ProductServiceTest#0" />
+            <element signature="method#testisProductExistByNameWhenProductNoExist#0;class#ProductServiceTest#0" />
+            <element signature="method#testisProductExistByIdWhenProductExist#0;class#ProductServiceTest#0" />
+            <element signature="method#testisProductExistByIdWhenProductNoExist#0;class#ProductServiceTest#0" />
           </folding>
         </state>
       </provider>
