@@ -1,3 +1,5 @@
+package company;
+
 public class Cloth extends Product
 {
     private String size;

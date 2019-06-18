@@ -1,3 +1,5 @@
+package company;
+
 public class Boots extends Product
 {
     private int size;
