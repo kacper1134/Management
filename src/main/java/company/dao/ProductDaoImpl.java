@@ -41,7 +41,7 @@ public class ProductDaoImpl implements ProductDao
     {
         List<Product> products = getAllProducts();
 
-        for(int i = 0;i<products.size();i++)
+        for(int i = products.size() - 1;i >= 0;i--)
         {
             boolean isFoundProduct = products.get(i).getId() == productId;
 
@@ -59,7 +59,7 @@ public class ProductDaoImpl implements ProductDao
     {
         List<Product> products = getAllProducts();
 
-        for(int i = 0;i<products.size();i++)
+        for(int i = products.size() - 1;i >=0;i--)
         {
             boolean isFoundProduct = products.get(i).getProductName().equals(productName);
 
@@ -79,12 +79,12 @@ public class ProductDaoImpl implements ProductDao
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         List<Product> products = new ArrayList<>();
 
-        String line = "";
+        String line = bufferedReader.readLine();
 
         while(line != null)
         {
-            line = bufferedReader.readLine();
             products.add(fromStringToProduct(line));
+            line = bufferedReader.readLine();
 
         }
 
