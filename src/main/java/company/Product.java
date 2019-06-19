@@ -4,12 +4,12 @@ public class Product
 {
     private int id;
     private String productName;
-    private int price;
-    private int weight;
+    private float price;
+    private float weight;
     private String color;
     private int productCount;
-
-    public Product(int id, String productName, int price, int weight, String color, int productCount)
+    public static final String PRODUCT_SEPARATOR = "#";
+    public Product(int id, String productName, float price, float weight, String color, int productCount)
     {
         this.id = id;
         this.productName = productName;
@@ -29,12 +29,12 @@ public class Product
         return productName;
     }
 
-    public int getPrice()
+    public float getPrice()
     {
         return price;
     }
 
-    public int getWeight()
+    public float getWeight()
     {
         return weight;
     }

@@ -1,6 +1,7 @@
 package company.dao;
 
 import company.Product;
+import company.parse.ProductParser;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -9,10 +10,12 @@ import java.util.List;
 public class ProductDaoImpl implements ProductDao
 {
     private String fileName;
+    private String productType;
 
-    public ProductDaoImpl(String fileName)
+    public ProductDaoImpl(String fileName,String productType)
     {
         this.fileName = fileName;
+        this.productType = productType;
     }
 
     @Override
@@ -83,7 +86,9 @@ public class ProductDaoImpl implements ProductDao
 
         while(line != null)
         {
-            products.add(fromStringToProduct(line));
+            ProductParser parser = new ProductParser();
+
+            products.add(parser.stringToProduct(line,productType));
             line = bufferedReader.readLine();
 
         }
@@ -127,25 +132,5 @@ public class ProductDaoImpl implements ProductDao
         return null;
     }
 
-    public Product fromStringToProduct(String product)
-    {
-        String [] atributes = {"","","","","",""};
 
-        int index = 0;
-        for(int i = 0;i<product.length();i++)
-        {
-            if(product.charAt(i) == '#')
-            {
-                index++;
-            }
-            else
-            {
-                atributes[index] += (product.charAt(i));
-            }
-        }
-        Product toProduct = new Product(Integer.parseInt(atributes[0]),atributes[1],Integer.parseInt(atributes[2]),
-                                        Integer.parseInt(atributes[3]),atributes[4],Integer.parseInt(atributes[5]));
-
-        return toProduct;
-    }
 }
