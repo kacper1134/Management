@@ -1,7 +1,7 @@
 package company.dao;
 
 import company.Product;
-import company.parse.ProductParser;
+import company.parser.ProductParser;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +29,7 @@ public class ProductDaoImpl implements ProductDao
     @Override
     public void SaveProducts(List<Product> products) throws FileNotFoundException
     {
-        PrintWriter printWriter = new PrintWriter(fileName);
+        PrintWriter printWriter = new PrintWriter(new FileOutputStream(fileName,false));
 
         for(Product product : products)
         {
@@ -77,13 +77,12 @@ public class ProductDaoImpl implements ProductDao
         BufferedReader bufferedReader = new BufferedReader(fileReader);
 
         List<Product> products = new ArrayList<>();
+        ProductParser parser = new ProductParser();
 
         String line = bufferedReader.readLine();
 
         while(line != null)
         {
-            ProductParser parser = new ProductParser();
-
             products.add(parser.stringToProduct(line,productType));
 
             line = bufferedReader.readLine();

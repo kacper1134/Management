@@ -1,4 +1,4 @@
-package company.parse;
+package company.parser;
 
 import company.User;
 
