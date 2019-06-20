@@ -9,6 +9,8 @@ public class Product
     private String color;
     private int productCount;
     public static final String PRODUCT_SEPARATOR = "#";
+    public final String productType = "PRODUCT";
+
     public Product(int id, String productName, float price, float weight, String color, int productCount)
     {
         this.id = id;
@@ -64,4 +66,6 @@ public class Product
     {
         return id + "#" + productName+"#"+price+"#"+weight+"#"+color+"#"+productCount;
     }
+
+
 }

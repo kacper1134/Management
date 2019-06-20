@@ -2,7 +2,6 @@ package company.dao;
 
 import company.Product;
 import company.parse.ProductParser;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,17 +14,18 @@ public class ProductDaoImpl implements ProductDao
     public ProductDaoImpl(String fileName,String productType)
     {
         this.fileName = fileName;
+
         this.productType = productType;
     }
-
     @Override
     public void SaveProduct(Product product) throws IOException
     {
         List<Product> products = getAllProducts();
+
         products.add(product);
+
         SaveProducts(products);
     }
-
     @Override
     public void SaveProducts(List<Product> products) throws FileNotFoundException
     {
@@ -35,10 +35,8 @@ public class ProductDaoImpl implements ProductDao
         {
             printWriter.write(product.toString() + "\n");
         }
-
         printWriter.close();
     }
-
     @Override
     public void removeProductById(Long productId) throws IOException
     {
@@ -53,10 +51,8 @@ public class ProductDaoImpl implements ProductDao
                 products.remove(i);
             }
         }
-
         SaveProducts(products);
     }
-
     @Override
     public void removeProductByName(String productName) throws IOException
     {
@@ -71,15 +67,15 @@ public class ProductDaoImpl implements ProductDao
                 products.remove(i);
             }
         }
-
         SaveProducts(products);
     }
-
     @Override
     public List<Product> getAllProducts() throws IOException
     {
         FileReader fileReader = new FileReader(fileName);
+
         BufferedReader bufferedReader = new BufferedReader(fileReader);
+
         List<Product> products = new ArrayList<>();
 
         String line = bufferedReader.readLine();
@@ -89,14 +85,14 @@ public class ProductDaoImpl implements ProductDao
             ProductParser parser = new ProductParser();
 
             products.add(parser.stringToProduct(line,productType));
+
             line = bufferedReader.readLine();
 
         }
-
         bufferedReader.close();
+
         return products;
     }
-
     @Override
     public Product getProductById(Long productId) throws IOException
     {
@@ -105,16 +101,13 @@ public class ProductDaoImpl implements ProductDao
         for(int i = 0;i<products.size();i++)
         {
             boolean foundProduct = products.get(i).getId() == productId;
-
             if(foundProduct)
             {
                 return products.get(i);
             }
         }
-
         return null;
     }
-
     @Override
     public Product getProductByProductName(String productName) throws IOException
     {
@@ -123,7 +116,6 @@ public class ProductDaoImpl implements ProductDao
         for(int i = 0;i<products.size();i++)
         {
             boolean foundProduct = products.get(i).getProductName().equals(productName);
-
             if(foundProduct)
             {
                 return products.get(i);
@@ -131,6 +123,4 @@ public class ProductDaoImpl implements ProductDao
         }
         return null;
     }
-
-
 }
