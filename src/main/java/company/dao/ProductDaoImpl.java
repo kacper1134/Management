@@ -11,11 +11,12 @@ public class ProductDaoImpl implements ProductDao
     private String fileName;
     private String productType;
 
-    public ProductDaoImpl(String fileName,String productType)
+    public ProductDaoImpl(String fileName,String productType) throws IOException
     {
         this.fileName = fileName;
-
         this.productType = productType;
+        File file = new File(fileName);
+        file.createNewFile();
     }
     @Override
     public void SaveProduct(Product product) throws IOException

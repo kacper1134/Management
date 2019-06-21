@@ -11,9 +11,11 @@ public class UserDaoImpl implements UserDao
 {
     private String fileName;
 
-    public UserDaoImpl(String fileName)
+    public UserDaoImpl(String fileName) throws IOException
     {
         this.fileName = fileName;
+        File file = new File(fileName);
+        file.createNewFile();
     }
 
     @Override
