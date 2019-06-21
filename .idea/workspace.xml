@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbaf7e9a-32d1-4519-8e37-c1d26bf1b450" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/company/exception/UserLoginAlreadyExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/company/exception/UserShortLengthLoginExceotion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/company/exception/UserShortLengthPasswordException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/company/validator/UserValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/company/dao/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/dao/ProductDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cos.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dane.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/company/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/dao/UserDaoImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -22,36 +21,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/company/exception/UserLoginAlreadyExistException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/company/exception/UserShortLengthLoginExceotion.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-              <folding>
-                <element signature="e#151#152#0" expanded="true" />
-                <element signature="e#174#175#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/company/exception/UserShortLengthPasswordException.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/company/validator/UserValidator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+            <state relative-caret-position="420">
+              <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
               <folding>
-                <element signature="e#159#160#0" expanded="true" />
-                <element signature="e#179#180#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="method#UserValidator#0;class#UserValidator#0" />
+                <element signature="method#getInstance#0;class#UserValidator#0" />
+                <element signature="e#1569#1570#0" expanded="true" />
+                <element signature="e#1689#1690#0" expanded="true" />
+                <element signature="method#isLoginAlreadyExist#0;class#UserValidator#0" />
               </folding>
             </state>
           </provider>
@@ -96,13 +77,14 @@
         <option value="$PROJECT_DIR$/src/main/java/company/parse/ProductParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/parse/UserParse.java" />
-        <option value="$PROJECT_DIR$/src/main/java/company/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/company/dao/UserDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/dao/ProductDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/exception/UserLoginAlreadyExistException.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/exception/UserShortLengthLoginExceotion.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/exception/UserShortLengthPasswordException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/dao/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/validator/UserValidator.java" />
       </list>
     </option>
   </component>
@@ -182,6 +164,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="management" type="b2602c69:ProjectViewProjectNode" />
+              <item name="management" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
               <item name="exception" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -253,7 +244,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14362416" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23557048" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -267,7 +258,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.31728044" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.31857142" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32719547" />
@@ -410,16 +401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/company/service/api/ProductService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -468,24 +449,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/dao/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#UserDaoImpl#0;class#UserDaoImpl#0" />
-            <element signature="method#saveUser#0;class#UserDaoImpl#0" />
-            <element signature="method#saveUsers#0;class#UserDaoImpl#0" />
-            <element signature="method#getAllUsers#0;class#UserDaoImpl#0" />
-            <element signature="method#getUserByLogin#0;class#UserDaoImpl#0" />
-            <element signature="method#getUserById#0;class#UserDaoImpl#0" />
-            <element signature="method#removeUserByLogin#0;class#UserDaoImpl#0" />
-            <element signature="method#removeUserById#0;class#UserDaoImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/company/dao/ProductDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -510,10 +473,14 @@
     <entry file="file://$PROJECT_DIR$/cos.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/exception/UserLoginAlreadyExistException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/exception/UserShortLengthPasswordException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="221">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#159#160#0" expanded="true" />
+            <element signature="e#179#180#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -528,13 +495,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/exception/UserShortLengthPasswordException.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/exception/UserLoginAlreadyExistException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
           <folding>
-            <element signature="e#159#160#0" expanded="true" />
-            <element signature="e#179#180#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/dao/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#UserDaoImpl#0;class#UserDaoImpl#0" />
+            <element signature="method#getInstance#0;class#UserDaoImpl#0" />
+            <element signature="method#saveUser#0;class#UserDaoImpl#0" />
+            <element signature="method#saveUsers#0;class#UserDaoImpl#0" />
+            <element signature="method#getAllUsers#0;class#UserDaoImpl#0" />
+            <element signature="method#getUserByLogin#0;class#UserDaoImpl#0" />
+            <element signature="method#getUserById#0;class#UserDaoImpl#0" />
+            <element signature="method#removeUserByLogin#0;class#UserDaoImpl#0" />
+            <element signature="method#removeUserById#0;class#UserDaoImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/validator/UserValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#UserValidator#0;class#UserValidator#0" />
+            <element signature="method#getInstance#0;class#UserValidator#0" />
+            <element signature="e#1569#1570#0" expanded="true" />
+            <element signature="e#1689#1690#0" expanded="true" />
+            <element signature="method#isLoginAlreadyExist#0;class#UserValidator#0" />
           </folding>
         </state>
       </provider>

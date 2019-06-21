@@ -9,13 +9,22 @@ import java.util.List;
 
 public class UserDaoImpl implements UserDao
 {
-    private String fileName;
+    private final String fileName = "Users.txt";
+    private static UserDaoImpl userDao = null;
 
-    public UserDaoImpl(String fileName) throws IOException
+    private UserDaoImpl() throws IOException
     {
-        this.fileName = fileName;
         File file = new File(fileName);
         file.createNewFile();
+    }
+
+    public static UserDaoImpl getInstance() throws IOException
+    {
+        if(userDao == null)
+        {
+            userDao = new UserDaoImpl();
+        }
+        return userDao;
     }
 
     @Override
