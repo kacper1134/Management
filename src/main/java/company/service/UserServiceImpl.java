@@ -1,45 +1,47 @@
 package company.service;
 
 import company.User;
+import company.dao.UserDao;
+import company.dao.UserDaoImpl;
 import company.service.api.UserService;
+import company.validator.UserValidator;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService
 {
-    List<User> users;
+    private static UserServiceImpl userService = null;
+    private UserDao userDao = UserDaoImpl.getInstance();
+    private UserValidator userValidator = UserValidator.getInstance();
 
-    public UserServiceImpl()
+    private UserServiceImpl() throws IOException
     {
-        this.users = new ArrayList<>();
+
     }
-    public UserServiceImpl(List<User> users)
+    public static UserServiceImpl getInstance() throws IOException
     {
-        this.users = users;
-    }
-    @Override
-    public List<User>getAllUsers()
-    {
-        return users;
-    }
-    @Override
-    public void addUser(User user)
-    {
-        users.add(user);
-    }
-    @Override
-    public void removeUserById(Long userId)
-    {
-        for(int i = 0;i<users.size();i++)
+        if(userService == null)
         {
-            User userFromList = users.get(i);
-
-            if(userFromList.getId() == userId)
-            {
-                users.remove(i);
-                break;
-            }
+            userService = new UserServiceImpl();
         }
+
+        return userService;
+    }
+
+    @Override
+    public List<User>getAllUsers() throws IOException
+    {
+        return userDao.getAllUsers();
+    }
+    @Override
+    public void addUser(User user) throws IOException
+    {
+        userDao.saveUser(user);
+    }
+    @Override
+    public void removeUserById(Long userId) throws IOException
+    {
+        userDao.removeUserById(userId);
     }
 }

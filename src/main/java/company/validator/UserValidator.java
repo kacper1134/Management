@@ -53,6 +53,7 @@ public class UserValidator
     {
         return password.length() >= MINIMUM_LENGTH_PASSWORD;
     }
+
     private boolean isLoginLegthEnough(String login)
     {
         return login.length() >= MINIMUM_LENGTH_LOGIN;

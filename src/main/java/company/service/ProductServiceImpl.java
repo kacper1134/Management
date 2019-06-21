@@ -1,55 +1,54 @@
 package company.service;
 
 import company.Product;
+import company.dao.ProductDao;
+import company.dao.ProductDaoImpl;
 import company.service.api.ProductService;
 
-import java.util.ArrayList;
+import java.io.IOException;
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService
 {
-    List<Product> products;
+    private static ProductServiceImpl productService = null;
+    private ProductDao productDao = new ProductDaoImpl("products.txt","PRODUCT");
 
-    public ProductServiceImpl()
-    {
-        products = new ArrayList<>();
+    private ProductServiceImpl() throws IOException {
+
     }
 
-    public ProductServiceImpl(List<Product> products)
+    public static ProductServiceImpl getInstance() throws IOException
     {
-        this.products = products;
-    }
-
-    @Override
-    public List<Product> getAllProducts()
-    {
-        return products;
-    }
-
-    @Override
-    public Integer getCountProducts()
-    {
-        return products.size();
-    }
-
-    @Override
-    public Product getProductByProductName(String productName)
-    {
-        for(Product product : products)
+        if(productService == null)
         {
-            if(product.getProductName().equals(productName))
-            {
-                return product;
-            }
+            productService = new ProductServiceImpl();
         }
 
-        return null;
+        return productService;
     }
 
     @Override
-    public boolean isProductOnWarehouse(String productName)
+    public List<Product> getAllProducts() throws IOException
     {
-        for(Product product : products)
+        return productDao.getAllProducts();
+    }
+
+    @Override
+    public Integer getCountProducts() throws IOException
+    {
+        return productDao.getAllProducts().size();
+    }
+
+    @Override
+    public Product getProductByProductName(String productName) throws IOException
+    {
+        return productDao.getProductByProductName(productName);
+    }
+
+    @Override
+    public boolean isProductOnWarehouse(String productName) throws IOException
+    {
+        for(Product product : getAllProducts())
         {
             if(isProductExist(productName) && product.getProductCount() > 0)
             {
@@ -60,9 +59,9 @@ public class ProductServiceImpl implements ProductService
     }
 
     @Override
-    public boolean isProductExist(String productName)
+    public boolean isProductExist(String productName) throws IOException
     {
-        for(Product product : products)
+        for(Product product : getAllProducts())
         {
             if(product.getProductName() == productName)
             {
@@ -73,9 +72,9 @@ public class ProductServiceImpl implements ProductService
     }
 
     @Override
-    public boolean isProductExist(Long productId)
+    public boolean isProductExist(Long productId) throws IOException
     {
-        for(Product product : products)
+        for(Product product : getAllProducts())
         {
             if(product.getId() == productId)
             {
