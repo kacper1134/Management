@@ -3,6 +3,9 @@ package company.service;
 import company.User;
 import company.dao.UserDao;
 import company.dao.UserDaoImpl;
+import company.exception.UserLoginAlreadyExistException;
+import company.exception.UserShortLengthLoginExceotion;
+import company.exception.UserShortLengthPasswordException;
 import company.service.api.UserService;
 import company.validator.UserValidator;
 
@@ -35,9 +38,12 @@ public class UserServiceImpl implements UserService
         return userDao.getAllUsers();
     }
     @Override
-    public void addUser(User user) throws IOException
+    public void addUser(User user) throws IOException, UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException
     {
-        userDao.saveUser(user);
+        if(userValidator.isValidate(user))
+        {
+            userDao.saveUser(user);
+        }
     }
     @Override
     public void removeUserById(Long userId) throws IOException
