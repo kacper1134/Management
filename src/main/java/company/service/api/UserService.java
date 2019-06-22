@@ -15,6 +15,6 @@ public interface UserService
     void removeUserById(Long userId) throws IOException;
     User getUserById(Long userId) throws IOException;
     User getUserByLogin(String login) throws IOException;
-    boolean isCorrectLoginAndPassword(String login,String password) throws UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException;
+    boolean isCorrectLoginAndPassword(String login,String password) throws UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException, IOException;
     boolean isLoginAlreadyExist(String login) throws IOException, UserLoginAlreadyExistException;
 }

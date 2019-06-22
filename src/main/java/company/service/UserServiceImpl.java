@@ -90,9 +90,21 @@ public class UserServiceImpl implements UserService
     }
 
     @Override
-    public boolean isCorrectLoginAndPassword(String login, String password) throws UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException
+    public boolean isCorrectLoginAndPassword(String login, String password) throws IOException
     {
-        return userValidator.isValidate(new User(1,login,password));
+        User user = getUserByLogin(login);
+
+        if(user == null)
+        {
+            return false;
+        }
+
+        if(user.getPassword().equals(password))
+        {
+            return true;
+        }
+
+        return false;
     }
 
     @Override

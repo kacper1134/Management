@@ -11,7 +11,7 @@ import java.util.List;
 public class ProductServiceImpl implements ProductService
 {
     private static ProductServiceImpl productService = null;
-    private ProductDao productDao = new ProductDaoImpl("products.txt","PRODUCT");
+    private ProductDao productDao = ProductDaoImpl.getInstance();
 
     private ProductServiceImpl() throws IOException
     {
@@ -102,5 +102,23 @@ public class ProductServiceImpl implements ProductService
     {
         productDao.SaveProduct(product);
         return true;
+    }
+
+    @Override
+    public Product getProductByProductId(int productId) throws IOException
+    {
+        List<Product> products = getAllProducts();
+
+        for(Product product : products)
+        {
+            boolean foundProduct = product.getId() == productId;
+
+            if(foundProduct)
+            {
+                return product;
+            }
+        }
+
+        return null;
     }
 }
