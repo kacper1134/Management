@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService
     @Override
     public boolean addUser(User user) throws IOException, UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException
     {
-        if(userValidator.isValidate(user))
+        if(userValidator.isValidate(user) && !isLoginAlreadyExist(user.getLogin()))
         {
             userDao.saveUser(user);
             return true;
@@ -93,5 +93,23 @@ public class UserServiceImpl implements UserService
     public boolean isCorrectLoginAndPassword(String login, String password) throws UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException
     {
         return userValidator.isValidate(new User(1,login,password));
+    }
+
+    @Override
+    public boolean isLoginAlreadyExist(String login) throws IOException, UserLoginAlreadyExistException
+    {
+        List<User> users = userDao.getAllUsers();
+
+        for(User user : users)
+        {
+            boolean foundUser = user.getLogin().equals(login);
+
+            if(foundUser)
+            {
+                throw new UserLoginAlreadyExistException(login);
+            }
+        }
+
+        return false;
     }
 }

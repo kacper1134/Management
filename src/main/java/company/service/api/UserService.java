@@ -16,4 +16,5 @@ public interface UserService
     User getUserById(Long userId) throws IOException;
     User getUserByLogin(String login) throws IOException;
     boolean isCorrectLoginAndPassword(String login,String password) throws UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException;
+    boolean isLoginAlreadyExist(String login) throws IOException, UserLoginAlreadyExistException;
 }
