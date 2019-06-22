@@ -1,11 +1,11 @@
 package company.validator;
 
 import company.User;
-import company.dao.UserDao;
+import company.dao.api.UserDao;
 import company.dao.UserDaoImpl;
-import company.exception.UserLoginAlreadyExistException;
-import company.exception.UserShortLengthLoginExceotion;
-import company.exception.UserShortLengthPasswordException;
+import company.exceptions.UserExceptions.UserLoginAlreadyExistException;
+import company.exceptions.UserExceptions.UserShortLengthLoginExceotion;
+import company.exceptions.UserExceptions.UserShortLengthPasswordException;
 
 import java.io.IOException;
 
@@ -38,11 +38,11 @@ public class UserValidator
         {
             throw new UserShortLengthPasswordException(user.getPassword());
         }
-        if(!isLoginLegthEnough(user.getLogin()))
+        if(!isLoginLengthEnough(user.getLogin()))
         {
             throw new UserShortLengthLoginExceotion(user.getLogin());
         }
-        if(!isLoginAlreadyExist(user.getLogin()))
+        if(isLoginAlreadyExist(user.getLogin()))
         {
             throw new UserLoginAlreadyExistException(user.getLogin());
         }
@@ -54,7 +54,7 @@ public class UserValidator
         return password.length() >= MINIMUM_LENGTH_PASSWORD;
     }
 
-    private boolean isLoginLegthEnough(String login)
+    private boolean isLoginLengthEnough(String login)
     {
         return login.length() >= MINIMUM_LENGTH_LOGIN;
     }
@@ -64,7 +64,7 @@ public class UserValidator
         User user = null;
         try
         {
-            user = userDao.getUserByLogin(login);
+            user = userDao.
         }
         catch(IOException e)
         {

@@ -6,13 +6,13 @@ import company.Product;
 
 public class ProductParser
 {
-    public Product stringToProduct(String product,String productType)
+    public Product stringToProduct(String product)
     {
-        if(productType.equals("PRODUCT"))
+        if(product.charAt(0) == 'P')
         {
             return convertToProduct(product);
         }
-        else if(productType.equals("CLOTH"))
+        else if(product.charAt(0) == 'C')
         {
             return convertToCloth(product);
         }
@@ -24,39 +24,39 @@ public class ProductParser
     private Product convertToProduct(String product)
     {
         String [] productInformation = product.split(Product.PRODUCT_SEPARATOR);
-        int id = Integer.parseInt(productInformation[0]);
-        String productName = productInformation[1];
-        float price = Float.parseFloat(productInformation[2]);
-        float weight = Float.parseFloat(productInformation[3]);
-        String color = productInformation[4];
-        int productCount = Integer.parseInt(productInformation[5]);
+        int id = Integer.parseInt(productInformation[1]);
+        String productName = productInformation[2];
+        float price = Float.parseFloat(productInformation[3]);
+        float weight = Float.parseFloat(productInformation[4]);
+        String color = productInformation[5];
+        int productCount = Integer.parseInt(productInformation[6]);
 
         return new Product(id,productName,price,weight,color,productCount);
     }
     private Cloth convertToCloth(String product)
     {
         String [] productInformation = product.split(Product.PRODUCT_SEPARATOR);
-        int id = Integer.parseInt(productInformation[0]);
-        String productName = productInformation[1];
-        float price = Float.parseFloat(productInformation[2]);
-        float weight = Float.parseFloat(productInformation[3]);
-        String color = productInformation[4];
-        int productCount = Integer.parseInt(productInformation[5]);
-        String size = productInformation[6];
-        String material = productInformation[7];
+        int id = Integer.parseInt(productInformation[1]);
+        String productName = productInformation[2];
+        float price = Float.parseFloat(productInformation[3]);
+        float weight = Float.parseFloat(productInformation[4]);
+        String color = productInformation[5];
+        int productCount = Integer.parseInt(productInformation[6]);
+        String size = productInformation[7];
+        String material = productInformation[8];
         return new Cloth(id,productName,price,weight,color,productCount,size,material);
     }
     private Boots convertToBoots(String product)
     {
         String [] productInformation = product.split(Product.PRODUCT_SEPARATOR);
-        int id = Integer.parseInt(productInformation[0]);
-        String productName = productInformation[1];
-        float price = Float.parseFloat(productInformation[2]);
-        float weight = Float.parseFloat(productInformation[3]);
-        String color = productInformation[4];
-        int productCount = Integer.parseInt(productInformation[5]);
-        int size = Integer.parseInt(productInformation[6]);
-        boolean isNaturalSkin = Boolean.parseBoolean(productInformation[7]);
+        int id = Integer.parseInt(productInformation[1]);
+        String productName = productInformation[2];
+        float price = Float.parseFloat(productInformation[3]);
+        float weight = Float.parseFloat(productInformation[4]);
+        String color = productInformation[5];
+        int productCount = Integer.parseInt(productInformation[6]);
+        int size = Integer.parseInt(productInformation[7]);
+        boolean isNaturalSkin = Boolean.parseBoolean(productInformation[8]);
 
         return new Boots(id,productName,price,weight,color,productCount,size,isNaturalSkin);
     }

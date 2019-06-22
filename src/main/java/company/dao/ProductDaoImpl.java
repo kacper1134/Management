@@ -1,6 +1,7 @@
 package company.dao;
 
 import company.Product;
+import company.dao.api.ProductDao;
 import company.parser.ProductParser;
 import java.io.*;
 import java.util.ArrayList;
@@ -9,15 +10,24 @@ import java.util.List;
 public class ProductDaoImpl implements ProductDao
 {
     private String fileName;
-    private String productType;
+    private static ProductDaoImpl productDao = null;
 
-    public ProductDaoImpl(String fileName,String productType) throws IOException
+    private ProductDaoImpl(String fileName) throws IOException
     {
         this.fileName = fileName;
-        this.productType = productType;
         File file = new File(fileName);
         file.createNewFile();
     }
+    public static ProductDaoImpl getInstance() throws IOException
+    {
+        if(productDao == null)
+        {
+            productDao = new ProductDaoImpl("Produkty.txt");
+        }
+
+        return productDao;
+    }
+
     @Override
     public void SaveProduct(Product product) throws IOException
     {
@@ -84,7 +94,7 @@ public class ProductDaoImpl implements ProductDao
 
         while(line != null)
         {
-            products.add(parser.stringToProduct(line,productType));
+            products.add(parser.stringToProduct(line));
 
             line = bufferedReader.readLine();
 
@@ -92,35 +102,5 @@ public class ProductDaoImpl implements ProductDao
         bufferedReader.close();
 
         return products;
-    }
-    @Override
-    public Product getProductById(Long productId) throws IOException
-    {
-        List<Product> products = getAllProducts();
-
-        for(int i = 0;i<products.size();i++)
-        {
-            boolean foundProduct = products.get(i).getId() == productId;
-            if(foundProduct)
-            {
-                return products.get(i);
-            }
-        }
-        return null;
-    }
-    @Override
-    public Product getProductByProductName(String productName) throws IOException
-    {
-        List<Product> products = getAllProducts();
-
-        for(int i = 0;i<products.size();i++)
-        {
-            boolean foundProduct = products.get(i).getProductName().equals(productName);
-            if(foundProduct)
-            {
-                return products.get(i);
-            }
-        }
-        return null;
     }
 }

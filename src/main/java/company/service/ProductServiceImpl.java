@@ -1,7 +1,7 @@
 package company.service;
 
 import company.Product;
-import company.dao.ProductDao;
+import company.dao.api.ProductDao;
 import company.dao.ProductDaoImpl;
 import company.service.api.ProductService;
 
@@ -13,7 +13,8 @@ public class ProductServiceImpl implements ProductService
     private static ProductServiceImpl productService = null;
     private ProductDao productDao = new ProductDaoImpl("products.txt","PRODUCT");
 
-    private ProductServiceImpl() throws IOException {
+    private ProductServiceImpl() throws IOException
+    {
 
     }
 
@@ -42,7 +43,19 @@ public class ProductServiceImpl implements ProductService
     @Override
     public Product getProductByProductName(String productName) throws IOException
     {
-        return productDao.getProductByProductName(productName);
+        List<Product> products = productDao.getAllProducts();
+
+        for(Product product : products)
+        {
+            boolean foundProduct = product.getProductName().equals(productName);
+
+            if(foundProduct)
+            {
+                return product;
+            }
+        }
+
+        return null;
     }
 
     @Override
@@ -82,5 +95,12 @@ public class ProductServiceImpl implements ProductService
             }
         }
         return false;
+    }
+
+    @Override
+    public boolean saveProduct(Product product) throws IOException
+    {
+        productDao.SaveProduct(product);
+        return true;
     }
 }

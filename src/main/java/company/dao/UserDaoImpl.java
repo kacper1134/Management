@@ -1,6 +1,7 @@
 package company.dao;
 
 import company.User;
+import company.dao.api.UserDao;
 import company.parser.UserParser;
 
 import java.io.*;
@@ -64,41 +65,6 @@ public class UserDaoImpl implements UserDao
         }
 
         return users;
-    }
-
-    @Override
-    public User getUserByLogin(String login) throws IOException
-    {
-        List<User> users = getAllUsers();
-
-        for(User user : users)
-        {
-            boolean foundUser = user.getLogin().equals(login);
-
-            if(foundUser)
-            {
-                return user;
-            }
-        }
-
-        return null;
-    }
-
-    @Override
-    public User getUserById(Long userId) throws IOException
-    {
-        List<User> users = getAllUsers();
-
-        for(User user : users)
-        {
-            boolean foundUser = user.getId() == userId;
-
-            if(foundUser)
-            {
-                return user;
-            }
-        }
-        return null;
     }
 
     @Override

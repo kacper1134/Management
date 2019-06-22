@@ -1,11 +1,11 @@
 package company.service;
 
 import company.User;
-import company.dao.UserDao;
+import company.dao.api.UserDao;
 import company.dao.UserDaoImpl;
-import company.exception.UserLoginAlreadyExistException;
-import company.exception.UserShortLengthLoginExceotion;
-import company.exception.UserShortLengthPasswordException;
+import company.exceptions.UserExceptions.UserLoginAlreadyExistException;
+import company.exceptions.UserExceptions.UserShortLengthLoginExceotion;
+import company.exceptions.UserExceptions.UserShortLengthPasswordException;
 import company.service.api.UserService;
 import company.validator.UserValidator;
 
@@ -38,16 +38,60 @@ public class UserServiceImpl implements UserService
         return userDao.getAllUsers();
     }
     @Override
-    public void addUser(User user) throws IOException, UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException
+    public boolean addUser(User user) throws IOException, UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException
     {
         if(userValidator.isValidate(user))
         {
             userDao.saveUser(user);
+            return true;
         }
+        return false;
     }
     @Override
     public void removeUserById(Long userId) throws IOException
     {
         userDao.removeUserById(userId);
+    }
+
+    @Override
+    public User getUserById(Long userId) throws IOException
+    {
+        List<User> users = getAllUsers();
+
+        for(User user : users)
+        {
+            boolean foundUser = user.getId() == userId;
+
+            if(foundUser)
+            {
+                return user;
+            }
+        }
+
+        return null;
+    }
+
+    @Override
+    public User getUserByLogin(String login) throws IOException
+    {
+        List<User> users = userDao.getAllUsers();
+
+        for(User user : users)
+        {
+            boolean foundUser = user.getLogin().equals(login);
+
+            if(foundUser)
+            {
+                return user;
+            }
+        }
+
+        return null;
+    }
+
+    @Override
+    public boolean isCorrectLoginAndPassword(String login, String password) throws UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException
+    {
+        return userValidator.isValidate(new User(1,login,password));
     }
 }

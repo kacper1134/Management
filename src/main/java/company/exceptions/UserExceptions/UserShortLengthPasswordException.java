@@ -1,4 +1,4 @@
-package company.exception;
+package company.exceptions.UserExceptions;
 
 public class UserShortLengthPasswordException extends Exception
 {

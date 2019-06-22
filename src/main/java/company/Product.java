@@ -9,7 +9,7 @@ public class Product
     private String color;
     private int productCount;
     public static final String PRODUCT_SEPARATOR = "#";
-    public final String productType = "PRODUCT";
+    public static final String productType = "P";
 
     public Product(int id, String productName, float price, float weight, String color, int productCount)
     {
@@ -64,7 +64,7 @@ public class Product
     @Override
     public String toString()
     {
-        return id + "#" + productName+"#"+price+"#"+weight+"#"+color+"#"+productCount;
+        return Product.productType+"#"+id + "#" + productName+"#"+price+"#"+weight+"#"+color+"#"+productCount;
     }
 
 

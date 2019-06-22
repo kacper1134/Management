@@ -1,4 +1,4 @@
-package company.dao;
+package company.dao.api;
 
 import company.Product;
 
@@ -13,6 +13,4 @@ public interface ProductDao
     void removeProductById(Long productId) throws IOException;
     void removeProductByName(String productName) throws IOException;
     List<Product> getAllProducts() throws IOException;
-    Product getProductById(Long productId) throws IOException;
-    Product getProductByProductName(String productName) throws IOException;
 }

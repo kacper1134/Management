@@ -1,9 +1,9 @@
 package company.service.api;
 
 import company.User;
-import company.exception.UserLoginAlreadyExistException;
-import company.exception.UserShortLengthLoginExceotion;
-import company.exception.UserShortLengthPasswordException;
+import company.exceptions.UserExceptions.UserLoginAlreadyExistException;
+import company.exceptions.UserExceptions.UserShortLengthLoginExceotion;
+import company.exceptions.UserExceptions.UserShortLengthPasswordException;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,6 +11,9 @@ import java.util.List;
 public interface UserService
 {
     List<User> getAllUsers() throws IOException;
-    void addUser(User user) throws IOException, UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException;
+    boolean addUser(User user) throws IOException, UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException;
     void removeUserById(Long userId) throws IOException;
+    User getUserById(Long userId) throws IOException;
+    User getUserByLogin(String login) throws IOException;
+    boolean isCorrectLoginAndPassword(String login,String password) throws UserShortLengthLoginExceotion, UserShortLengthPasswordException, UserLoginAlreadyExistException;
 }

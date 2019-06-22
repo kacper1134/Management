@@ -4,7 +4,7 @@ public class Boots extends Product
 {
     private int size;
     private boolean isNaturalSkin;
-    public final String productType = "Boots";
+    public static final String productType = "B";
 
     public Boots(int id, String productName, float price, float weight, String color, int productCount, int size, boolean isNaturalSkin)
     {
@@ -26,6 +26,7 @@ public class Boots extends Product
     @Override
     public String toString()
     {
-        return super.toString() + "#" + size + "#" + isNaturalSkin;
+        return Boots.productType+"#"+super.getId()+"#"+super.getProductName()+"#"+super.getPrice()+"#"+super.getWeight()
+                +"#"+super.getColor()+"#"+super.getProductCount()+"#"+size+"#"+isNaturalSkin;
     }
 }

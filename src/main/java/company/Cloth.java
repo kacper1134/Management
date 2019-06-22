@@ -4,7 +4,7 @@ public class Cloth extends Product
 {
     private String size;
     private String material;
-    public final String productType = "Cloth";
+    public static final String productType = "C";
 
     public Cloth(int id, String productName, float price, float weight, String color, int productCount, String size, String material)
     {
@@ -26,6 +26,7 @@ public class Cloth extends Product
     @Override
     public String toString()
     {
-        return super.toString() + "#" + size + "#" + material;
+        return Cloth.productType+"#"+super.getId()+"#"+super.getProductName()+"#"+super.getPrice()+"#"+super.getWeight()+
+                "#"+super.getColor()+"#"+super.getProductCount()+"#"+size+"#"+material;
     }
 }
