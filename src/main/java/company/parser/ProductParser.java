@@ -8,17 +8,24 @@ public class ProductParser
 {
     public Product stringToProduct(String product)
     {
-        if(product.charAt(0) == 'P')
+        switch(product.charAt(0))
         {
-            return convertToProduct(product);
-        }
-        else if(product.charAt(0) == 'C')
-        {
-            return convertToCloth(product);
-        }
-        else
-        {
-            return convertToBoots(product);
+            case 'P':
+            {
+                return convertToProduct(product);
+            }
+            case 'C':
+            {
+                return convertToCloth(product);
+            }
+            case 'B':
+            {
+                return convertToBoots(product);
+            }
+            default:
+            {
+                return convertToProduct(product);
+            }
         }
     }
     private Product convertToProduct(String product)

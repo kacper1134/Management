@@ -2,3 +2,4 @@ B#1#Boots#1.2#1.3#Blue#1#40#true
 C#1#Cloth#1.2#1.3#Red#1#S#Skin
 P#1#Product#1.2#1.3#Yellow#1
 C#1#Cloth#1.2#1.3#Red#1#S#Skin
+C#1#Cloth#1.2#1.3#Red#1#S#Skin
