@@ -22,7 +22,7 @@ public class ProductDaoImpl implements ProductDao
     {
         if(productDao == null)
         {
-            productDao = new ProductDaoImpl("Produkty.txt");
+            productDao = new ProductDaoImpl("Produkty.data");
         }
 
         return productDao;

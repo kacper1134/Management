@@ -10,7 +10,7 @@ import java.util.List;
 
 public class UserDaoImpl implements UserDao
 {
-    private final String fileName = "Users.txt";
+    private final String fileName = "Users.data";
     private static UserDaoImpl userDao = null;
 
     private UserDaoImpl() throws IOException

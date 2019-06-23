@@ -1,5 +1,7 @@
 package company;
 
+import company.enums.ProductSeparators;
+
 public class Product
 {
     private int id;
@@ -8,8 +10,6 @@ public class Product
     private float weight;
     private String color;
     private int productCount;
-    public static final String PRODUCT_SEPARATOR = "#";
-    public static final String productType = "P";
 
     public Product(int id, String productName, float price, float weight, String color, int productCount)
     {
@@ -61,10 +61,18 @@ public class Product
         this.price = price;
     }
 
+    protected String getBasicProductString()
+    {
+        return  ProductSeparators.PRODUCT_SEPARATOR.toString() + id +
+                ProductSeparators.PRODUCT_SEPARATOR.toString() + productName+ProductSeparators.PRODUCT_SEPARATOR.toString()+
+                price+ProductSeparators.PRODUCT_SEPARATOR.toString()+weight+ProductSeparators.PRODUCT_SEPARATOR.toString()+color+
+                ProductSeparators.PRODUCT_SEPARATOR.toString()+productCount;
+    }
+
     @Override
     public String toString()
     {
-        return Product.productType+"#"+id + "#" + productName+"#"+price+"#"+weight+"#"+color+"#"+productCount;
+        return ProductSeparators.PRODUCT_ID.toString() + getBasicProductString();
     }
 
 

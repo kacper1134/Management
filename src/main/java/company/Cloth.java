@@ -1,10 +1,11 @@
 package company;
 
+import company.enums.ProductSeparators;
+
 public class Cloth extends Product
 {
     private String size;
     private String material;
-    public static final String productType = "C";
 
     public Cloth(int id, String productName, float price, float weight, String color, int productCount, String size, String material)
     {
@@ -26,7 +27,7 @@ public class Cloth extends Product
     @Override
     public String toString()
     {
-        return Cloth.productType+"#"+super.getId()+"#"+super.getProductName()+"#"+super.getPrice()+"#"+super.getWeight()+
-                "#"+super.getColor()+"#"+super.getProductCount()+"#"+size+"#"+material;
+        return ProductSeparators.CLOTH_ID.toString() + getBasicProductString() + ProductSeparators.PRODUCT_SEPARATOR.toString() +
+                size + ProductSeparators.PRODUCT_SEPARATOR.toString() + material;
     }
 }

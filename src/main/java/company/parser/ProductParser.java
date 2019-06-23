@@ -3,6 +3,7 @@ package company.parser;
 import company.Boots;
 import company.Cloth;
 import company.Product;
+import company.enums.ProductSeparators;
 
 public class ProductParser
 {
@@ -30,7 +31,7 @@ public class ProductParser
     }
     private Product convertToProduct(String product)
     {
-        String [] productInformation = product.split(Product.PRODUCT_SEPARATOR);
+        String [] productInformation = product.split(ProductSeparators.PRODUCT_SEPARATOR.toString());
         int id = Integer.parseInt(productInformation[1]);
         String productName = productInformation[2];
         float price = Float.parseFloat(productInformation[3]);
@@ -42,7 +43,7 @@ public class ProductParser
     }
     private Cloth convertToCloth(String product)
     {
-        String [] productInformation = product.split(Product.PRODUCT_SEPARATOR);
+        String [] productInformation = product.split(ProductSeparators.PRODUCT_SEPARATOR.toString());
         int id = Integer.parseInt(productInformation[1]);
         String productName = productInformation[2];
         float price = Float.parseFloat(productInformation[3]);
@@ -55,7 +56,7 @@ public class ProductParser
     }
     private Boots convertToBoots(String product)
     {
-        String [] productInformation = product.split(Product.PRODUCT_SEPARATOR);
+        String [] productInformation = product.split(ProductSeparators.PRODUCT_SEPARATOR.toString());
         int id = Integer.parseInt(productInformation[1]);
         String productName = productInformation[2];
         float price = Float.parseFloat(productInformation[3]);

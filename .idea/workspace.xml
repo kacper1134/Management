@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbaf7e9a-32d1-4519-8e37-c1d26bf1b450" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/company/enums/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/company/enums/Material.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/company/enums/ProductSeparators.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/company/enums/SkinType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/company/parser/ColorParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/company/parser/MaterialParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/company/parser/SkinParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Produkty.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Produkty.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Produkty.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/company/Boots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/Boots.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/company/Cloth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/Cloth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/company/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/company/dao/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/dao/ProductDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/company/dao/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/dao/UserDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/company/parser/ProductParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/company/parser/ProductParser.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,16 +29,23 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/company/enums/ProductSeparators.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/company/parser/SkinParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            <state relative-caret-position="356">
+              <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
               <folding>
-                <element signature="e#213#214#0" expanded="true" />
-                <element signature="e#255#256#0" expanded="true" />
-                <element signature="e#297#298#0" expanded="true" />
-                <element signature="e#328#329#0" expanded="true" />
+                <element signature="method#SkinParser#0;class#SkinParser#0" />
+                <element signature="method#getInstance#0;class#SkinParser#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/company/enums/SkinType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="11" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -44,8 +56,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -77,11 +89,6 @@
         <option value="$PROJECT_DIR$/src/main/java/company/exception/UserShortLengthPasswordException.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/dao/api/ProductDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/company/dao/UserDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/company/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/java/company/Cloth.java" />
-        <option value="$PROJECT_DIR$/src/main/java/company/Boots.java" />
-        <option value="$PROJECT_DIR$/src/main/java/company/dao/ProductDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/exceptions/ProductExceptions/ProductCountNegativeException.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/exceptions/ProductExceptions/ProductNameEmptyException.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/exceptions/ProductExceptions/ProductPriceNoPositiveException.java" />
@@ -96,11 +103,19 @@
         <option value="$PROJECT_DIR$/src/main/java/company/service/api/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/service/ProductServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/company/parser/ProductParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/enums/Color.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/enums/Material.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/enums/SkinType.java" />
         <option value="$PROJECT_DIR$/src/main/java/company/enums/ProductSeparators.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/dao/ProductDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/dao/UserDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/Boots.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/Cloth.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/parser/ProductParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/parser/ColorParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/parser/MaterialParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/company/parser/SkinParser.java" />
       </list>
     </option>
   </component>
@@ -127,7 +142,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-15" />
     <option name="y" value="5" />
     <option name="width" value="1024" />
@@ -180,6 +195,15 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="company" type="462c0819:PsiDirectoryNode" />
               <item name="enums" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="management" type="b2602c69:ProjectViewProjectNode" />
+              <item name="management" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="company" type="462c0819:PsiDirectoryNode" />
+              <item name="parser" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="management" type="b2602c69:ProjectViewProjectNode" />
@@ -261,10 +285,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-12" y="4" width="819" height="832" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4334651" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22080536" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -273,12 +297,12 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3555241" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3555241" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.31586403" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.31303117" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32719547" />
@@ -350,33 +374,6 @@
           <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="66" column="110" lean-forward="true" selection-start-line="66" selection-start-column="110" selection-end-line="66" selection-end-column="110" />
-          <folding>
-            <element signature="method#Product#0;class#Product#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/dao/ProductDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="65" lean-forward="true" selection-start-line="20" selection-start-column="65" selection-end-line="20" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#ProductDaoImpl#0;class#ProductDaoImpl#0" />
-            <element signature="method#getInstance#0;class#ProductDaoImpl#0" />
-            <element signature="method#SaveProduct#0;class#ProductDaoImpl#0" />
-            <element signature="method#SaveProducts#0;class#ProductDaoImpl#0" />
-            <element signature="method#removeProductById#0;class#ProductDaoImpl#0" />
-            <element signature="method#removeProductByName#0;class#ProductDaoImpl#0" />
-            <element signature="method#getAllProducts#0;class#ProductDaoImpl#0" />
           </folding>
         </state>
       </provider>
@@ -465,23 +462,6 @@
             <element signature="method#UserValidator#0;class#UserValidator#0" />
             <element signature="method#getInstance#0;class#UserValidator#0" />
             <element signature="method#isValidate#0;class#UserValidator#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/dao/UserDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="104" lean-forward="true" selection-start-line="104" selection-end-line="104" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#UserDaoImpl#0;class#UserDaoImpl#0" />
-            <element signature="method#getInstance#0;class#UserDaoImpl#0" />
-            <element signature="method#saveUser#0;class#UserDaoImpl#0" />
-            <element signature="method#saveUsers#0;class#UserDaoImpl#0" />
-            <element signature="method#getAllUsers#0;class#UserDaoImpl#0" />
-            <element signature="method#removeUserByLogin#0;class#UserDaoImpl#0" />
-            <element signature="method#removeUserById#0;class#UserDaoImpl#0" />
           </folding>
         </state>
       </provider>
@@ -576,37 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/Cloth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="29" column="87" selection-start-line="29" selection-start-column="87" selection-end-line="29" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/Boots.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" column="93" selection-start-line="29" selection-start-column="93" selection-end-line="29" selection-end-column="93" />
-          <folding>
-            <element signature="method#Boots#0;class#Boots#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/parser/ProductParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#stringToProduct#0;class#ProductParser#0" />
-            <element signature="method#convertToProduct#0;class#ProductParser#0" />
-            <element signature="method#convertToCloth#0;class#ProductParser#0" />
-            <element signature="method#convertToBoots#0;class#ProductParser#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../maven.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -624,32 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/enums/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="27" lean-forward="true" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
-          <folding>
-            <element signature="e#205#206#0" expanded="true" />
-            <element signature="e#235#236#0" expanded="true" />
-            <element signature="e#286#287#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/enums/Material.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="39" lean-forward="true" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/company/enums/SkinType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/company/enums/ProductSeparators.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -659,6 +582,134 @@
             <element signature="e#255#256#0" expanded="true" />
             <element signature="e#297#298#0" expanded="true" />
             <element signature="e#328#329#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/dao/ProductDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="24" column="61" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#ProductDaoImpl#0;class#ProductDaoImpl#0" />
+            <element signature="method#SaveProduct#0;class#ProductDaoImpl#0" />
+            <element signature="method#SaveProducts#0;class#ProductDaoImpl#0" />
+            <element signature="method#removeProductById#0;class#ProductDaoImpl#0" />
+            <element signature="method#removeProductByName#0;class#ProductDaoImpl#0" />
+            <element signature="method#getAllProducts#0;class#ProductDaoImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/dao/UserDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#UserDaoImpl#0;class#UserDaoImpl#0" />
+            <element signature="method#getInstance#0;class#UserDaoImpl#0" />
+            <element signature="method#saveUser#0;class#UserDaoImpl#0" />
+            <element signature="method#saveUsers#0;class#UserDaoImpl#0" />
+            <element signature="method#getAllUsers#0;class#UserDaoImpl#0" />
+            <element signature="method#removeUserByLogin#0;class#UserDaoImpl#0" />
+            <element signature="method#removeUserById#0;class#UserDaoImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/Cloth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <element signature="method#toString#0;class#Cloth#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/Boots.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="34" selection-end-line="7" selection-end-column="34" />
+          <folding>
+            <element signature="method#Boots#0;class#Boots#0" />
+            <element signature="method#toString#0;class#Boots#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="64" column="4" selection-start-line="64" selection-start-column="4" selection-end-line="64" selection-end-column="4" />
+          <folding>
+            <element signature="method#Product#0;class#Product#0" />
+            <element signature="method#getBasicProductString#0;class#Product#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/enums/Material.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/enums/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/parser/ProductParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="58" column="101" lean-forward="true" selection-start-line="58" selection-start-column="101" selection-end-line="58" selection-end-column="101" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#stringToProduct#0;class#ProductParser#0" />
+            <element signature="method#convertToProduct#0;class#ProductParser#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/parser/MaterialParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/parser/ColorParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="method#ColorParser#0;class#ColorParser#0" />
+            <element signature="method#getInstance#0;class#ColorParser#0" />
+            <element signature="method#strToColor#0;class#ColorParser#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/enums/SkinType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="11" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/company/parser/SkinParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding>
+            <element signature="method#SkinParser#0;class#SkinParser#0" />
+            <element signature="method#getInstance#0;class#SkinParser#0" />
           </folding>
         </state>
       </provider>
