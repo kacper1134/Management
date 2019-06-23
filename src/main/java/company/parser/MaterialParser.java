@@ -4,24 +4,8 @@ import company.enums.Material;
 
 public class MaterialParser
 {
-    private static MaterialParser materialParser = null;
 
-    private MaterialParser()
-    {
-
-    }
-
-    public static MaterialParser getInstance()
-    {
-        if(materialParser == null)
-        {
-            materialParser = new MaterialParser();
-        }
-
-        return materialParser;
-    }
-
-    public static Material strToColor(String str)
+    public static Material strToMaterial(String str)
     {
         str = str.toUpperCase();
 

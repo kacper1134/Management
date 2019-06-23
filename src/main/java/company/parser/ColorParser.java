@@ -4,23 +4,6 @@ import company.enums.Color;
 
 public class ColorParser
 {
-    private static ColorParser colorParser = null;
-
-    private ColorParser()
-    {
-
-    }
-
-    public static ColorParser getInstance()
-    {
-        if(colorParser == null)
-        {
-            colorParser = new ColorParser();
-        }
-
-        return colorParser;
-    }
-
     public static Color strToColor(String str)
     {
         str = str.toUpperCase();

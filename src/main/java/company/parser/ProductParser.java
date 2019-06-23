@@ -3,7 +3,10 @@ package company.parser;
 import company.Boots;
 import company.Cloth;
 import company.Product;
+import company.enums.Color;
+import company.enums.Material;
 import company.enums.ProductSeparators;
+import company.enums.SkinType;
 
 public class ProductParser
 {
@@ -36,7 +39,7 @@ public class ProductParser
         String productName = productInformation[2];
         float price = Float.parseFloat(productInformation[3]);
         float weight = Float.parseFloat(productInformation[4]);
-        String color = productInformation[5];
+        Color color = ColorParser.strToColor(productInformation[5]);
         int productCount = Integer.parseInt(productInformation[6]);
 
         return new Product(id,productName,price,weight,color,productCount);
@@ -48,10 +51,10 @@ public class ProductParser
         String productName = productInformation[2];
         float price = Float.parseFloat(productInformation[3]);
         float weight = Float.parseFloat(productInformation[4]);
-        String color = productInformation[5];
+        Color color = ColorParser.strToColor(productInformation[5]);
         int productCount = Integer.parseInt(productInformation[6]);
         String size = productInformation[7];
-        String material = productInformation[8];
+        Material material = MaterialParser.strToMaterial(productInformation[8]);
         return new Cloth(id,productName,price,weight,color,productCount,size,material);
     }
     private Boots convertToBoots(String product)
@@ -61,11 +64,11 @@ public class ProductParser
         String productName = productInformation[2];
         float price = Float.parseFloat(productInformation[3]);
         float weight = Float.parseFloat(productInformation[4]);
-        String color = productInformation[5];
+        Color color = ColorParser.strToColor(productInformation[5]);
         int productCount = Integer.parseInt(productInformation[6]);
         int size = Integer.parseInt(productInformation[7]);
-        boolean isNaturalSkin = Boolean.parseBoolean(productInformation[8]);
+        SkinType skinType = SkinParser.strToSkinType(productInformation[8]);
 
-        return new Boots(id,productName,price,weight,color,productCount,size,isNaturalSkin);
+        return new Boots(id,productName,price,weight,color,productCount,size,skinType);
     }
 }

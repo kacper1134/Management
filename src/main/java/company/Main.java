@@ -1,5 +1,8 @@
 package company;
 
+import company.enums.Color;
+import company.enums.Material;
+import company.enums.SkinType;
 import company.exceptions.UserExceptions.UserLoginAlreadyExistException;
 import company.exceptions.UserExceptions.UserShortLengthLoginExceotion;
 import company.exceptions.UserExceptions.UserShortLengthPasswordException;
@@ -124,17 +127,17 @@ public class Main
         {
             case 1:
             {
-                productService.saveProduct(new Boots(1,"Boots",1.2f,1.3f,"Blue",1,40,true));
+                productService.saveProduct(new Boots(1,"Boots",1.2f,1.3f, Color.BLUE,1,40, SkinType.NATURAL));
                 break;
             }
             case 2:
             {
-                productService.saveProduct(new Cloth(1,"Cloth",1.2f,1.3f,"Red",1,"S","Skin"));
+                productService.saveProduct(new Cloth(1,"Cloth",1.2f,1.3f,Color.RED,1,"S", Material.LEATHER));
                 break;
             }
             case 3:
             {
-                productService.saveProduct(new Product(1,"Product",1.2f,1.3f,"Yellow",1));
+                productService.saveProduct(new Product(1,"Product",1.2f,1.3f,Color.YELLOW,1));
                 break;
             }
             default:

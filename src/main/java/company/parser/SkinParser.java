@@ -4,22 +4,6 @@ import company.enums.SkinType;
 
 public class SkinParser
 {
-    private static SkinParser skinParser = null;
-
-    private SkinParser()
-    {
-
-    }
-
-    public static SkinParser getInstance()
-    {
-        if(skinParser == null)
-        {
-            skinParser = new SkinParser();
-        }
-        return skinParser;
-    }
-
     public static SkinType strToSkinType(String str)
     {
         str = str.toUpperCase();
@@ -30,7 +14,7 @@ public class SkinParser
         }
         else
         {
-            return SkinType.ARTIFICAL;
+            return SkinType.ARTIFICIAL;
         }
     }
 }
