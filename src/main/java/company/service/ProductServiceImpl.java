@@ -121,4 +121,11 @@ public class ProductServiceImpl implements ProductService
 
         return null;
     }
+
+    @Override
+    public boolean removeProductByProductName(String productName) throws IOException
+    {
+        productDao.removeProductByName(productName);
+        return true;
+    }
 }

@@ -12,23 +12,25 @@ public class ProductParser
 {
     public Product stringToProduct(String product)
     {
-        switch(product.charAt(0))
+        String seperator = product.substring(0,1);
+
+        switch(stringToProductSeperator(seperator))
         {
-            case 'P':
+            case PRODUCT_ID:
             {
                 return convertToProduct(product);
             }
-            case 'C':
-            {
-                return convertToCloth(product);
-            }
-            case 'B':
+            case BOOTS_ID:
             {
                 return convertToBoots(product);
             }
+            case CLOTH_ID:
+            {
+                return convertToCloth(product);
+            }
             default:
             {
-                return convertToProduct(product);
+                return null;
             }
         }
     }
@@ -70,5 +72,16 @@ public class ProductParser
         SkinType skinType = SkinParser.strToSkinType(productInformation[8]);
 
         return new Boots(id,productName,price,weight,color,productCount,size,skinType);
+    }
+    private ProductSeparators stringToProductSeperator(String str)
+    {
+        for(ProductSeparators productSeparators : ProductSeparators.values())
+        {
+            if(productSeparators.toString().equals(str))
+            {
+                return productSeparators;
+            }
+        }
+        return null;
     }
 }

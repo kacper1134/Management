@@ -6,9 +6,10 @@ import company.exceptions.UserExceptions.UserShortLengthLoginExceotion;
 import company.exceptions.UserExceptions.UserShortLengthPasswordException;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public interface UserRegisterLoginFacade
 {
-    boolean registerUser(User user) throws UserShortLengthLoginExceotion, UserLoginAlreadyExistException, UserShortLengthPasswordException, IOException;
-    boolean loginUser(String login,String password) throws IOException;
+    String registerUser(User user) throws UserShortLengthLoginExceotion, UserLoginAlreadyExistException, UserShortLengthPasswordException, IOException, SQLException;
+    boolean loginUser(String login,String password) throws IOException, SQLException;
 }

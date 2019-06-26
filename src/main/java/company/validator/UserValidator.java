@@ -16,12 +16,12 @@ public class UserValidator
     private final int MINIMUM_LENGTH_PASSWORD = 6;
     private final int MINIMUM_LENGTH_LOGIN = 4;
 
-    private UserValidator() throws IOException
+    private UserValidator()
     {
 
     }
 
-    public static UserValidator getInstance() throws IOException
+    public static UserValidator getInstance()
     {
         if(userValidator == null)
         {

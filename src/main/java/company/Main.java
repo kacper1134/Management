@@ -3,33 +3,46 @@ package company;
 import company.enums.Color;
 import company.enums.Material;
 import company.enums.SkinType;
-import company.exceptions.UserExceptions.UserLoginAlreadyExistException;
-import company.exceptions.UserExceptions.UserShortLengthLoginExceotion;
-import company.exceptions.UserExceptions.UserShortLengthPasswordException;
+import company.facade.ProductFacadeImpl;
 import company.facade.UserRegisterLoginFacadeImpl;
-import company.service.ProductServiceImpl;
-
-import java.io.IOException;
+import company.parser.ColorParser;
+import company.parser.MaterialParser;
+import company.parser.SkinParser;
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main
 {
-    public static void main(String[] args) throws UserShortLengthLoginExceotion, UserLoginAlreadyExistException, UserShortLengthPasswordException, IOException
+    public static void main(String[] args) throws SQLException, ClassNotFoundException
     {
         int state = welcomMenu();
 
         while(state != 0)
         {
-            while(state == 2 && loggedMenu())
+            int log_choice = loggedMenu();
+
+            while(state == 2 && log_choice != 0)
             {
-                productMenu();
+                if(log_choice == 1)
+                {
+                    productMenu();
+                }
+                else if(log_choice == 2)
+                {
+                    remove_Product();
+                }
+                else
+                {
+                    display_All_Products();
+                }
+                log_choice = loggedMenu();
             }
 
             state = welcomMenu();
         }
     }
-    public static int welcomMenu() throws IOException, UserShortLengthLoginExceotion, UserLoginAlreadyExistException, UserShortLengthPasswordException
-    {
+    public static int welcomMenu() throws  SQLException, ClassNotFoundException {
         UserRegisterLoginFacadeImpl userRegisterLoginFacade = UserRegisterLoginFacadeImpl.getInstance();
         Scanner scanner = new Scanner(System.in);
 
@@ -68,14 +81,8 @@ public class Main
                 System.out.println("Wprowadź hasło: ");
                 String hasło = scanner.next();
 
-                if(userRegisterLoginFacade.registerUser(new User(1L,login,hasło)))
-                {
-                    System.out.println("Udało ci się zajerestrować!!!");
-                }
-                else
-                {
-                    System.out.println("Nie udało ci się zajerestrować");
-                }
+                System.out.println(userRegisterLoginFacade.registerUser(new User(1L,login,hasło)));
+
                 return 1;
 
             }
@@ -89,34 +96,44 @@ public class Main
             }
         }
     }
-    public static boolean loggedMenu() throws IOException
+
+    public static int loggedMenu()
     {
         Scanner scanner = new Scanner(System.in);
         System.out.println("MANAGEMENT MENU");
         System.out.println("1 - Dodaj nowy produkt");
-        System.out.println("0 - Wyloguj się");
+        System.out.println("2 - Usuń produkt");
+        System.out.println("3 - Wyświetl dostępne produkty");
+        System.out.println("Dowolny inna liczba - Wyloguj się");
         System.out.print("Twój wybór: ");
+
         int key = scanner.nextInt();
+
         switch(key)
         {
             case 1:
             {
-                return true;
+                return 1;
             }
-            case 0:
+            case 2:
             {
-                return false;
+                return 2;
+            }
+            case 3:
+            {
+                return 3;
             }
             default:
             {
-                return true;
+                return 0;
             }
         }
     }
-    public static void productMenu() throws IOException
+    public static void productMenu()
     {
         Scanner scanner = new Scanner(System.in);
-        ProductServiceImpl productService = ProductServiceImpl.getInstance();
+        ProductFacadeImpl productFacade = ProductFacadeImpl.getInstance();
+
         System.out.println("1 - Dodaj buty");
         System.out.println("2 - Dodaj ubrania");
         System.out.println("3 - Inne");
@@ -127,23 +144,85 @@ public class Main
         {
             case 1:
             {
-                productService.saveProduct(new Boots(1,"Boots",1.2f,1.3f, Color.BLUE,1,40, SkinType.NATURAL));
+                System.out.println("Podaj nazwę przedmiotu: ");
+                String name = scanner.next();
+                System.out.println("Podaj cenę produktu: ");
+                Float price = scanner.nextFloat();
+                System.out.println("Podaj wagę produktu: ");
+                Float weight = scanner.nextFloat();
+                System.out.println("Podaj kolor produktu(BLACK,WHITE,RED,GREEN,BLUE,YELLOW): ");
+                Color color = ColorParser.strToColor(scanner.next().toUpperCase());
+                System.out.println("Podaj ilość produktu: ");
+                Integer count = scanner.nextInt();
+                System.out.println("Podaj rozmiar buta: ");
+                Integer size = scanner.nextInt();
+                System.out.println("Podaj typ skóry (NATURAL,ARTIFICIAL): ");
+                SkinType skinType = SkinParser.strToSkinType(scanner.next().toUpperCase());
+
+                productFacade.createProduct(new Boots(1,name,price,weight,color,count,size,skinType));
                 break;
             }
             case 2:
             {
-                productService.saveProduct(new Cloth(1,"Cloth",1.2f,1.3f,Color.RED,1,"S", Material.LEATHER));
+                System.out.println("Podaj nazwę przedmiotu: ");
+                String name = scanner.next();
+                System.out.println("Podaj cenę produktu: ");
+                Float price = scanner.nextFloat();
+                System.out.println("Podaj wagę produktu: ");
+                Float weight = scanner.nextFloat();
+                System.out.println("Podaj kolor produktu(BLACK,WHITE,RED,GREEN,BLUE,YELLOW): ");
+                Color color = ColorParser.strToColor(scanner.next().toUpperCase());
+                System.out.println("Podaj ilość produktu: ");
+                Integer count = scanner.nextInt();
+                System.out.println("Podaj rozmiar ubrania: ");
+                String size = scanner.next();
+                System.out.println("Podaj materiał z którego jest zrobione ubranie(LEATHER,FUR,COTTON,WOOL,POLYESTERS): ");
+                Material material = MaterialParser.strToMaterial(scanner.next().toUpperCase());
+
+                productFacade.createProduct(new Cloth(1,name,price,weight,color,count,size,material));
                 break;
             }
             case 3:
             {
-                productService.saveProduct(new Product(1,"Product",1.2f,1.3f,Color.YELLOW,1));
+                System.out.println("Podaj nazwę przedmiotu: ");
+                String name = scanner.next();
+                System.out.println("Podaj cenę produktu: ");
+                Float price = scanner.nextFloat();
+                System.out.println("Podaj wagę produktu: ");
+                Float weight = scanner.nextFloat();
+                System.out.println("Podaj kolor produktu(BLACK,WHITE,RED,GREEN,BLUE,YELLOW): ");
+                Color color = ColorParser.strToColor(scanner.next().toUpperCase());
+                System.out.println("Podaj ilość produktu: ");
+                Integer count = scanner.nextInt();
+
+                productFacade.createProduct(new Product(1,name,price,weight,color,count));
                 break;
             }
             default:
             {
                 System.out.println("Błędna opcja!!!!");
             }
+        }
+    }
+    public static void remove_Product()
+    {
+        ProductFacadeImpl productFacade = ProductFacadeImpl.getInstance();
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Podaj nazwę produktu do usunięcia: ");
+        String name = scanner.next();
+
+        productFacade.removeProduct(name);
+    }
+    public static void display_All_Products()
+    {
+        ProductFacadeImpl productFacade = ProductFacadeImpl.getInstance();
+        List<Product> productList = productFacade.getAllProducts();
+
+
+        for(Product product : productList)
+        {
+            System.out.println(product.toString());
         }
     }
 }
